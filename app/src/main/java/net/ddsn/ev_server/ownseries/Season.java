@@ -35,6 +35,15 @@ public class Season extends AppCompatActivity {
         Intent intent = getIntent();
         id = intent.getStringExtra("id");
 
+        ImageView im = findViewById(R.id.back_arrow);
+
+        im.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         Ajax Fetch = new Ajax(this);
         String url = getString(R.string.ws) + "/get-seasons/" + id;
         final String picture = intent.getStringExtra("image");
@@ -53,7 +62,7 @@ public class Season extends AppCompatActivity {
                     items[i] = "Temporada " + index;
                 }
 
-                ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, items);
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.spinner_item, items);
                 dropdown.setAdapter(adapter);
 
                 dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
