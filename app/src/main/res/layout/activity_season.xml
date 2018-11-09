@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:background="@color/darkGrey"
+        android:id="@+id/season_image"/>
+
+    <android.support.v7.widget.AppCompatSpinner
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        style="@style/Spinner"
+        android:theme="@style/Spinner"
+        android:background="@color/darkGrey"
+        android:textAlignment="inherit"
+        android:padding="0dp"
+        android:id="@+id/dropdown"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/season_list"
+        android:layout_gravity="center_vertical"
+        android:background="@color/darkGrey"/>
+
+</LinearLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">OwnSeries</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_show_video">ShowVideo</string>
+    <string name="title">Mr. Robot</string>
+    <string name="season">Temporada 1</string>
+    <string name="ws">https://ev-server.ddns.net/ws/series</string>
+</resources>
