@@ -24,6 +24,7 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:background">@color/darkGrey</item>
+        <item name="android:windowBackground">@color/darkGrey</item>
     </style>
 
 </resources>

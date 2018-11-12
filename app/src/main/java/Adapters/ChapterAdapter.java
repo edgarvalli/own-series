@@ -55,6 +55,7 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ViewHold
 
                         Intent intent = new Intent(ctx.getApplicationContext(), ShowVideo.class);
                         intent.putExtra("url", chapters.getJSONObject(i).getString("url"));
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         ctx.startActivity(intent);
 
                     } catch (JSONException e) {

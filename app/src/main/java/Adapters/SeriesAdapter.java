@@ -54,6 +54,7 @@ public class SeriesAdapter extends RecyclerView.Adapter<SeriesAdapter.ViewHolder
                         Intent intent = new Intent(ctx.getApplicationContext(), Season.class);
                         intent.putExtra("id", series.getJSONObject(i).getString("_id"));
                         intent.putExtra("image", series.getJSONObject(i).getString("image"));
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         ctx.startActivity(intent);
 
                     } catch (JSONException e) {
