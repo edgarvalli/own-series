@@ -2,6 +2,7 @@ package Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
@@ -53,9 +55,15 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ViewHold
                 public void onClick(View v) {
                     try {
 
+                        SharedPreferences sp = ctx.getSharedPreferences("videos", Context.MODE_PRIVATE);
+                        int position = sp.getInt(chapters.getJSONObject(i).getString("_id"), 0);
+
                         Intent intent = new Intent(ctx.getApplicationContext(), ShowVideo.class);
                         intent.putExtra("url", chapters.getJSONObject(i).getString("url"));
+                        intent.putExtra("video_id", chapters.getJSONObject(i).getString("_id"));
+                        intent.putExtra(chapters.getJSONObject(i).getString("_id"), position);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
                         ctx.startActivity(intent);
 
                     } catch (JSONException e) {
